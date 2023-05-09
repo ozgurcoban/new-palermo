@@ -36,6 +36,7 @@ const MenuItem = ({ items }) => {
                     <h4>{name}</h4>
                     <p>{description}</p>
                     <Price>
+                      {price}
                       {takeawayPrice ? (
                         <p>
                           <span>/</span>
@@ -55,11 +56,7 @@ const MenuItem = ({ items }) => {
 };
 
 const MenuItemWrapper = styled.div`
-  /* padding: 1rem; */
   border-radius: ${({ theme }) => theme.borderRadius};
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
 `;
 
 const CategoryWrapper = styled.div`
