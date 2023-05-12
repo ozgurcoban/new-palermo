@@ -7,39 +7,42 @@ const Categories = ({ categories, filterItems, includeAll }) => {
   );
   const categoriesToRender = includeAll ? ['alla', ...categories] : categories;
   return (
-    <CategoriesContainer>
-      {categoriesToRender.map((category, index) => {
-        const isActive = category === activeCategory;
-        return (
-          <FilterWrapper>
-            <FilterButton
-              key={index}
-              onClick={() => {
-                filterItems(category);
-                setActiveCategory(category);
-              }}
-              active={isActive}
-            >
-              {category}
-            </FilterButton>
-            {isActive && <ActiveLine />}
-          </FilterWrapper>
-        );
-      })}
-    </CategoriesContainer>
+    <CategoriesWrapper>
+      <CategoriesContainer>
+        {categoriesToRender.map((category, index) => {
+          const isActive = category === activeCategory;
+          return (
+            <FilterWrapper>
+              <FilterButton
+                key={index}
+                onClick={() => {
+                  filterItems(category);
+                  setActiveCategory(category);
+                }}
+                active={isActive}
+              >
+                {category}
+              </FilterButton>
+              {isActive && <ActiveLine />}
+            </FilterWrapper>
+          );
+        })}
+      </CategoriesContainer>
+    </CategoriesWrapper>
   );
 };
+
+const CategoriesWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+`;
 
 const CategoriesContainer = styled.div`
   display: flex;
   white-space: nowrap;
   overflow-x: auto;
   margin-bottom: 2rem;
-  -webkit-overflow-scrolling: touch; // Smooth scrolling for iOS devices
-  scrollbar-width: none; // Hide scrollbar for Firefox
-  &::-webkit-scrollbar {
-    display: none; // Hide scrollbar for Chrome, Safari, and Opera
-  }
 `;
 
 const FilterWrapper = styled.div`
@@ -49,7 +52,7 @@ const FilterWrapper = styled.div`
 `;
 
 const FilterButton = styled.button`
-  margin: 0 0.2rem;
+  margin: 0;
   padding: 0.25rem 0.2rem;
   border: none;
   border-radius: 0.25rem;
@@ -58,6 +61,11 @@ const FilterButton = styled.button`
   cursor: pointer;
   transition: all 0.3s linear;
   text-transform: uppercase;
+  font-size: clamp(0.85rem, 1.2vw, 1.1rem);
+
+  @media (min-width: 380px) {
+    padding: 0.5rem 0.5rem;
+  }
 
   /* &:hover {
     background-color: purple;
@@ -74,7 +82,7 @@ const ActiveLine = styled.div`
     #e4cbaf 75%,
     rgba(255, 255, 255, 0) 100%
   );
-  margin: 0.25rem auto 0;
+  margin: 0.25rem auto 10px;
 `;
 
 export default Categories;

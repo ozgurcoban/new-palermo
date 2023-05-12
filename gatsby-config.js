@@ -18,7 +18,8 @@ module.exports = {
     siteUrl: 'https://palermo-uppsala.se',
   },
   plugins: [
-    `gatsby-background-image`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -26,8 +27,6 @@ module.exports = {
         path: path.join(__dirname, `src`, `images`),
       },
     },
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-styled-components`,
     },
@@ -36,6 +35,7 @@ module.exports = {
       options: {
         fonts: [
           `Lobster\:400`,
+          `Garamond\:400,400i,500,600,700`,
           `Playfair Display\:400,400i,500,600,700`, // you can also specify font weights and styles
         ],
         display: 'swap',

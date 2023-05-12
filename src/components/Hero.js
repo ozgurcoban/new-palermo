@@ -1,34 +1,27 @@
-import React, { useState, useEffect } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import BackgroundImage from 'gatsby-background-image';
+import React from 'react';
+import { StaticImage } from 'gatsby-plugin-image';
 import styled, { keyframes } from 'styled-components';
 import DownArrow from './DownArrow';
 
 const Hero = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "hero-background.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1920, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-    }
-  `);
-
   return (
-    <HeroContainer Tag='section' fluid={data.file.childImageSharp.fluid}>
-      <HeroOverlay>
-        <HeroTitle>
+    <Background>
+      <StaticImage
+        src='../images/hero.jpg'
+        alt='Background'
+        layout='fullWidth'
+        placeholder='blurred'
+        style={{ height: '100vh', width: '100%' }}
+      />
+      <Overlay>
+        <Title>
           Hem
           <br />
           trevliga
           <br />
           Palermo.
-        </HeroTitle>
-
-        <HeroSubtitle>
+        </Title>
+        <Subtitle>
           <div className='subtitle-wrapper'>
             <h5>Inofficiella 14:e nationen i Uppsala</h5>
             <div>
@@ -37,25 +30,26 @@ const Hero = () => {
               <span>Vällagat</span>
             </div>
           </div>
-        </HeroSubtitle>
+        </Subtitle>
+
         <DownArrow
           strokeColor='#E4CBAF'
           animationDuration='3.5s'
-          animationDelay='4.5s'
+          animationDelay='2.5s'
         />
-      </HeroOverlay>
-    </HeroContainer>
+      </Overlay>
+    </Background>
   );
 };
 
-const HeroContainer = styled(BackgroundImage)`
+const Background = styled.section`
   height: 100vh;
   width: 100%;
   color: white;
   position: relative;
 `;
 
-const HeroOverlay = styled.div`
+const Overlay = styled.div`
   position: absolute;
   top: 0;
   left: 0;
@@ -121,7 +115,24 @@ const fadeInMoveSpan3 = keyframes`
   }
 `;
 
-const HeroTitle = styled.h1`
+const Text = styled.div`
+  position: relative;
+  grid-area: title;
+  align-self: flex-end;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  animation: ${fadeInMove} 1s ease-out forwards;
+
+  @media (min-width: 768px) {
+    padding-left: 2rem;
+  }
+`;
+
+const Title = styled.h1`
   font-size: clamp(5rem, 20vw, 8rem);
   font-family: 'Lobster', cursive;
   font-weight: 400;
@@ -134,7 +145,7 @@ const HeroTitle = styled.h1`
   animation: ${fadeInMove} 1s ease-out forwards;
 `;
 
-const HeroSubtitle = styled.div`
+const Subtitle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -167,6 +178,7 @@ const HeroSubtitle = styled.div`
     font-weight: 500;
     font-size: clamp(1.2rem, 2vw, 2rem);
     text-align: center;
+    font-family: 'Playfair Display', serif;
   }
 
   div {
