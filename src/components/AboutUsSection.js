@@ -10,10 +10,10 @@ import {
 
 const AboutUsSection = () => {
   const ref = useParallax({
-    speed: 20,
+    speed: 15,
   });
   const ref2 = useParallax({
-    speed: 10,
+    speed: 20,
   });
 
   return (
@@ -80,14 +80,6 @@ const ContentContainer = styled(BaseContentContainer)`
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   gap: 1rem;
-
-  .parallax-image {
-    /* height: 400px; */
-    /* margin: 0 auto; */
-    border-radius: 5px;
-    aspect-ratio: 2/3;
-    width: 100%;
-  }
 `;
 
 const TextContainer = styled.div`
@@ -112,7 +104,7 @@ const AboutUsTextContainer = styled.div`
 
 const ImageContainer = styled.div`
   padding: 1rem 0;
-  height: 1500px;
+  /* height: 1500px; */
   display: grid;
   place-items: center;
 
@@ -123,6 +115,14 @@ const ImageContainer = styled.div`
 
   > div {
     width: 300px;
+  }
+
+  .parallax-image {
+    /* height: 400px; */
+    /* margin: 0 auto; */
+    border-radius: 5px;
+    aspect-ratio: 2/3;
+    width: 100%;
   }
 `;
 
