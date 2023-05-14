@@ -39,12 +39,9 @@ const MenuItem = ({ items }) => {
                     <div>
                       <h4>{name}</h4>
                       <Price>
-                        {price}:-
+                        {price}:- <span>/</span>
                         {takeawayPrice ? (
-                          <p>
-                            <span>/</span>
-                            {takeawayPrice}:-
-                          </p>
+                          <TakeawayPrice>{takeawayPrice}:-</TakeawayPrice>
                         ) : null}
                       </Price>
                     </div>
@@ -81,13 +78,14 @@ const MenuItemWrapper = styled.div`
 `;
 
 const CategoryWrapper = styled.div`
-  padding: 1rem;
+  padding: 1rem 1rem 0 1rem;
   position: sticky;
   top: 0;
   background-color: ${({ theme }) => theme.colors.primaryWhite};
 
   > p {
     margin-top: 0.5rem;
+    padding: 0;
   }
 `;
 
@@ -116,6 +114,11 @@ const Price = styled.div`
   font-weight: 700;
   display: flex;
   align-items: center;
+  margin: 0;
+`;
+
+const TakeawayPrice = styled.p`
+  margin: 0;
 `;
 
 export default MenuItem;

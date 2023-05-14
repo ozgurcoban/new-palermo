@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const Categories = ({ categories, filterItems, includeAll }) => {
-  const [activeCategory, setActiveCategory] = useState(
-    includeAll ? 'alla' : categories[0]
-  );
-  const categoriesToRender = includeAll ? ['alla', ...categories] : categories;
+const Categories = ({ categories, filterItems }) => {
+  const [activeCategory, setActiveCategory] = useState('pizza');
+
   return (
     <CategoriesWrapper>
       <CategoriesContainer>
-        {categoriesToRender.map((category, index) => {
+        {categories.map((category, index) => {
           const isActive = category === activeCategory;
           return (
             <FilterWrapper>

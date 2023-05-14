@@ -4,33 +4,23 @@ import Categories from './Menu/Categories';
 import MenuItem from './Menu/MenuItem';
 import items from '../data/menuItems';
 
-const allCategories = ['alla', ...new Set(items.map(item => item.category))];
+const allCategories = [...new Set(items.map(item => item.category))];
 
-const MenuSection = ({ defaultCategory }) => {
-  const [menuData, setMenuData] = useState(items);
+const MenuSection = () => {
+  const [menuData, setMenuData] = useState(
+    items.filter(item => item.category === 'pizza')
+  );
   const [categories, setCategories] = useState(allCategories);
-  const [currentCategory, setCurrentCategory] = useState(defaultCategory);
-
-  useEffect(() => {
-    if (currentCategory === 'alla') {
-      setMenuData(items);
-      return;
-    }
-    const newItems = items.filter(item => item.category === currentCategory);
-    setMenuData(newItems);
-  }, [currentCategory]);
 
   const filterItems = category => {
-    setCurrentCategory(category);
+    const newItems = items.filter(item => item.category === category);
+    setMenuData(newItems);
   };
 
   return (
     <MenuWrapper>
       <h2>Meny</h2>
-      <Categories
-        categories={categories.filter(category => category !== 'alla')}
-        filterItems={filterItems}
-      />
+      <Categories categories={categories} filterItems={filterItems} />
       <Wrapper>
         <ScrollableContent>
           <MenuItem items={menuData} />
