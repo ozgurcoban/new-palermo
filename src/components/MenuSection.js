@@ -20,7 +20,11 @@ const MenuSection = () => {
   return (
     <MenuWrapper>
       <h2>Meny</h2>
-      <Categories categories={categories} filterItems={filterItems} />
+      <Categories
+        style={{ paddingTop: '1rem' }}
+        categories={categories}
+        filterItems={filterItems}
+      />
       <Wrapper>
         <ScrollableContent>
           <MenuItem items={menuData} />
@@ -31,15 +35,13 @@ const MenuSection = () => {
 };
 
 const MenuWrapper = styled.div`
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
   background-color: ${({ theme }) => theme.colors.main};
-  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+
+  padding: 2rem 0;
 
   h2 {
     text-align: center;
     font-size: 3.5rem;
-    margin-bottom: 2rem;
-    padding-top: 3rem;
     font-weight: 400;
     color: ${({ theme }) => theme.colors.primaryWhite};
   }
@@ -60,7 +62,7 @@ const ScrollableContent = styled.div`
 `;
 
 const Wrapper = styled.div`
-  padding-bottom: 2rem;
+  /* padding-bottom: 2rem; */
 `;
 
 export default MenuSection;

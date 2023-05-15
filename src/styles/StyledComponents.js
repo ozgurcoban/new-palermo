@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const FullWidthBackground = styled.div`
   width: 100%;
-  background-color: ${({ theme }) => theme.colors.background};
+  /* background-color: ${({ theme }) => theme.colors.background}; */
 `;
 
 export const ContentContainer = styled.div`

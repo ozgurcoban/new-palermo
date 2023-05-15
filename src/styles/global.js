@@ -74,9 +74,9 @@ export const GlobalStyles = createGlobalStyle`
   h2 {
     text-align: center;
     font-size: 3.5rem;
-    margin-bottom: 2rem;
-    padding-top: 3rem;
+    margin: 2rem 0;
     font-weight: 400;
+    color: ${({ theme }) => theme.colors.primaryWhite};
   }
 
   p {
