@@ -20,11 +20,6 @@ const center = {
 const apiKey = 'AIzaSyCrBQMNSfP5M5PHDHLrdoJJ06e0P61HYUs';
 
 const GoogleMap = () => {
-  const iconSize =
-    typeof window.google === 'object'
-      ? new window.google.maps.Size(50, 50)
-      : undefined;
-
   return (
     <LoadScript googleMapsApiKey={apiKey}>
       <GoogleMaps
@@ -37,7 +32,7 @@ const GoogleMap = () => {
           position={center}
           icon={{
             url: '/logo.png',
-            scaledSize: iconSize,
+            scaledSize: { width: 50, height: 50 },
           }}
         />
       </GoogleMaps>
