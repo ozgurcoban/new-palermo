@@ -32,7 +32,7 @@ const GoogleMap = () => {
           position={center}
           icon={{
             url: '/logo.png',
-            scaledSize: { width: 50, height: 50 },
+            scaledSize: { width: 60, height: 60 },
           }}
         />
       </GoogleMaps>
