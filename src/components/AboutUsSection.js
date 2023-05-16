@@ -121,7 +121,7 @@ const ImageContainer = styled.div`
     /* margin: 0 auto; */
     border-radius: 5px;
     aspect-ratio: 2/3;
-    width: 30%;
+    width: 25%;
     position: absolute;
     object-fit: cover;
   }
