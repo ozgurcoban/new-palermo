@@ -79,6 +79,11 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.colors.primaryWhite};
   }
 
+  h3 {
+    font-size: clamp(1.5rem, 2vw, 1.8rem);
+    margin-bottom: 1em;
+  }
+
   p {
     margin: 2rem 0;
   }

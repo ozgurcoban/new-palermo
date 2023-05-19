@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import styled from 'styled-components';
+import React from 'react';
 
 import {
   GoogleMap as GoogleMaps,
@@ -9,17 +8,21 @@ import {
 
 const containerStyle = {
   width: '100%',
-  height: '70%',
+  height: '80%',
 };
 
 const center = {
-  lat: 59.860096 - 0.00013,
-  lng: 17.6305953 - 0.00013,
+  lat: 59.860096 - 0.0002,
+  lng: 17.6305953,
 };
 
-const apiKey = 'AIzaSyCrBQMNSfP5M5PHDHLrdoJJ06e0P61HYUs';
+const apiKey = process.env.GATSBY_GOOGLE_MAPS_API_KEY;
 
 const GoogleMap = () => {
+  const handleMarkerClick = () => {
+    const url = `https://www.google.com/maps/dir/?api=1&destination=${center.lat},${center.lng}`;
+    window.open(url, '_blank');
+  };
   return (
     <LoadScript googleMapsApiKey={apiKey}>
       <GoogleMaps
@@ -32,8 +35,10 @@ const GoogleMap = () => {
           position={center}
           icon={{
             url: '/logo.png',
-            scaledSize: { width: 60, height: 60 },
+            scaledSize: { width: 50, height: 50 },
           }}
+          onClick={handleMarkerClick}
+          style={{ cursor: 'pointer' }}
         />
       </GoogleMaps>
     </LoadScript>

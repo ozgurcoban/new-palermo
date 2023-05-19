@@ -8,5 +8,5 @@ export const Theme = {
     tertiary: '#E4CBAF',
   },
 
-  borderRadius: '0.5rem',
+  borderRadius: '8px',
 };

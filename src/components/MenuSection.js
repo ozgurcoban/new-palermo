@@ -35,6 +35,10 @@ const MenuSection = () => {
 };
 
 const MenuWrapper = styled.div`
+  background-image: url('/top-wave.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   background-color: ${({ theme }) => theme.colors.main};
 
   padding: 2rem 0;
