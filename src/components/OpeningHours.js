@@ -51,10 +51,7 @@ const OpeningHoursSection = () => {
 };
 
 const HoursSection = styled.section`
-  background: ${({ theme }) => theme.colors.primaryWhite};
   padding: 2em;
-  border-radius: ${({ theme }) => theme.borderRadius};
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   position: relative;
 `;
 

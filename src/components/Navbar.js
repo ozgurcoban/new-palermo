@@ -5,7 +5,9 @@ import styled from 'styled-components';
 const Navbar = ({ toggleSidebar }) => {
   return (
     <Nav>
-      <Logo to='/'>Logolito</Logo>
+      <Logo to='/'>
+        <img src='/logo.png' style={{ width: '4rem' }} />
+      </Logo>
       <Hamburger
         onClick={() => {
           toggleSidebar();

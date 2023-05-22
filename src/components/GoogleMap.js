@@ -9,6 +9,7 @@ import {
 const containerStyle = {
   width: '100%',
   height: '80%',
+  borderRadius: '8px',
 };
 
 const center = {
@@ -17,6 +18,7 @@ const center = {
 };
 
 const apiKey = process.env.GATSBY_GOOGLE_MAPS_API_KEY;
+console.log(apiKey);
 
 const GoogleMap = () => {
   const handleMarkerClick = () => {

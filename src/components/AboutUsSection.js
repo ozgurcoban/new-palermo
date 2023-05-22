@@ -111,7 +111,7 @@ const AboutUsText = styled.p`
   box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
   border-radius: 5px;
   font-size: 1.2rem;
-  line-height: 1.7rem;
+  line-height: 1.9rem;
   letter-spacing: 0.5px;
 
   @media (min-width: 768px) {
