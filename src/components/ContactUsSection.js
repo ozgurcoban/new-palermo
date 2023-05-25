@@ -37,6 +37,15 @@ const ContactUsSection = () => {
             email='info@palermo-uppsala.se'
             phoneNumber='018-13 18 20'
           />
+          <div className='front-image-wrapper'>
+            <StaticImage
+              src='../images/palermo_front.png'
+              alt='Palermo front'
+              placeholder='blurred'
+              layout='constrained'
+              className='front-image'
+            />
+          </div>
         </div>
         <div class='spacer'></div>
       </ContentContainer>
@@ -53,7 +62,7 @@ const ContentContainer = styled(BaseContentContainer)`
   align-items: center;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
-  gap: 1rem;
+  gap: 4rem;
   width: 100%;
 
   h2 {
@@ -68,6 +77,7 @@ const ContentContainer = styled(BaseContentContainer)`
     grid-template-columns: 1fr;
     grid-column-gap: 6rem;
     grid-row-gap: 2rem;
+    align-items: center;
     background: ${({ theme }) => theme.colors.primaryWhite};
     border-radius: ${({ theme }) => theme.borderRadius};
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -84,7 +94,7 @@ const ContentContainer = styled(BaseContentContainer)`
     }
 
     .clock-wrapper {
-      padding: 2rem;
+      padding: 8rem;
 
       .clock {
         /* margin: 2rem; */
@@ -94,6 +104,43 @@ const ContentContainer = styled(BaseContentContainer)`
 
     .spacer {
       height: 2rem;
+    }
+  }
+
+  .contact-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 2rem;
+    background-color: ${({ theme }) => theme.colors.primaryWhite};
+
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .front-image-wrapper {
+    border-radius: ${({ theme }) => theme.borderRadius};
+    margin: 2rem;
+    position: relative;
+    overflow: hidden;
+
+    .front-image {
+      width: 100%;
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 2;
     }
   }
 `;
