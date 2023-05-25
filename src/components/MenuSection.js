@@ -53,6 +53,17 @@ const MenuWrapper = styled.div`
     z-index: 1;
   }
 
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #607d8b;
+    z-index: 1;
+  }
+
   h2 {
     text-align: center;
     font-size: 3.5rem;
