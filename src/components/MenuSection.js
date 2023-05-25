@@ -35,6 +35,8 @@ const MenuSection = () => {
 };
 
 const MenuWrapper = styled.div`
+  position: relative;
+  overflow: auto; // new line
   background-image: url('/top-wave.svg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -42,16 +44,16 @@ const MenuWrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.main};
   padding: 2rem 0;
 
-  /* &::before {
+  &::after {
     content: '';
     position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
     height: 5px;
-    background-color: #060606;
-    z-index: 1;
-  } */
+    background-color: #607d8b;
+    z-index: 2;
+  }
 
   h2 {
     text-align: center;
