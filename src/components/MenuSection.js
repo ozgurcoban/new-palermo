@@ -25,33 +25,34 @@ const MenuSection = () => {
         categories={categories}
         filterItems={filterItems}
       />
-      <ScrollableContent>
-        <MenuItem items={menuData} />
-      </ScrollableContent>
+      <Wrapper>
+        <ScrollableContent>
+          <MenuItem items={menuData} />
+        </ScrollableContent>
+      </Wrapper>
     </MenuWrapper>
   );
 };
 
 const MenuWrapper = styled.div`
   position: relative;
-  overflow: auto;
+  overflow: auto; // new line
   background-image: url('/top-wave.svg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-color: ${({ theme }) => theme.colors.main};
   padding: 2rem 0;
-  height: 100vh;
 
   &::after {
     content: '';
     position: absolute;
     left: 0;
-    bottom: 3px;
+    bottom: 0;
     width: 100%;
     height: 10px;
     background-color: #607d8b;
-    z-index: 5;
+    z-index: 2;
   }
 
   h2 {
@@ -63,8 +64,8 @@ const MenuWrapper = styled.div`
 `;
 
 const ScrollableContent = styled.div`
-  min-height: 75%;
-  max-height: 75%;
+  min-height: 75vh;
+  max-height: 75vh;
   overflow-y: auto;
   /* background-color: darkcyan; */
   max-width: 600px;
@@ -74,6 +75,10 @@ const ScrollableContent = styled.div`
   background-color: ${({ theme }) => theme.colors.primaryWhite};
   box-shadow: inset 0 4px 6px 2px rgba(0, 0, 0, 0.1);
   outline: 3px solid #a28477;
+`;
+
+const Wrapper = styled.div`
+  /* padding-bottom: 2rem; */
 `;
 
 export default MenuSection;
