@@ -50,6 +50,7 @@ const MenuWrapper = styled.div`
     width: 100%;
     height: 5px;
     background-color: #060606;
+    /* background-color: red; */
     z-index: 1;
   }
 
