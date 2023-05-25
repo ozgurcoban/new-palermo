@@ -40,8 +40,14 @@ const MenuWrapper = styled.div`
   background-size: cover;
   background-position: center;
   background-color: ${({ theme }) => theme.colors.main};
-
   padding: 2rem 0;
+
+  &::after {
+    content: '';
+    display: block;
+    height: 5px; /* adjust as needed */
+    background-color: 060606;
+  }
 
   h2 {
     text-align: center;

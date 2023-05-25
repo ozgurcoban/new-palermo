@@ -49,10 +49,18 @@ const AboutUsSection = () => {
 
 const FullWidthBackground = styled(BaseFullWidthBackground)`
   background-image: url('/wave.svg');
+  border: none;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-color: ${({ theme }) => theme.colors.main};
+
+  &::after {
+    content: '';
+    display: block;
+    height: 5px; /* adjust as needed */
+    background-color: #8c6c5b;
+  }
 `;
 
 const ContentContainer = styled(BaseContentContainer)`
