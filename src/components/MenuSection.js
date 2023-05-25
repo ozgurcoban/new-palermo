@@ -34,7 +34,7 @@ const MenuSection = () => {
 
 const MenuWrapper = styled.div`
   position: relative;
-  /* overflow: auto; // new line */
+  overflow: auto;
   background-image: url('/top-wave.svg');
   background-repeat: no-repeat;
   background-size: cover;
