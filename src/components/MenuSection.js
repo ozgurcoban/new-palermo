@@ -41,6 +41,7 @@ const MenuWrapper = styled.div`
   background-position: center;
   background-color: ${({ theme }) => theme.colors.main};
   padding: 2rem 0;
+  height: 100vh;
 
   &::after {
     content: '';
@@ -62,8 +63,8 @@ const MenuWrapper = styled.div`
 `;
 
 const ScrollableContent = styled.div`
-  min-height: 75vh;
-  max-height: 75vh;
+  min-height: 75%;
+  max-height: 75%;
   overflow-y: auto;
   /* background-color: darkcyan; */
   max-width: 600px;
