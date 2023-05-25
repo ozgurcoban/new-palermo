@@ -42,11 +42,15 @@ const MenuWrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.main};
   padding: 2rem 0;
 
-  &::after {
+  &::before {
     content: '';
-    display: block;
-    height: 5px; /* adjust as needed */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
     background-color: 060606;
+    z-index: 1;
   }
 
   h2 {
