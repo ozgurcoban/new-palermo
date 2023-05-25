@@ -11,7 +11,12 @@ const Hero = () => {
         alt='Background'
         layout='fullWidth'
         placeholder='blurred'
-        style={{ height: '100vh', width: '100%' }}
+        style={{
+          height: '100vh',
+          width: '100%',
+          objectFit: 'cover',
+          objectPosition: 'center',
+        }}
       />
       <Overlay>
         <Title>
