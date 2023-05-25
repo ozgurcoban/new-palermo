@@ -49,18 +49,7 @@ const MenuWrapper = styled.div`
     bottom: 0;
     width: 100%;
     height: 5px;
-    background-color: 060606;
-    z-index: 1;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 5px;
-    background-color: #607d8b;
+    background-color: #060606;
     z-index: 1;
   }
 
