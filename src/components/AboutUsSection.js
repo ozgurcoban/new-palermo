@@ -57,9 +57,13 @@ const FullWidthBackground = styled(BaseFullWidthBackground)`
 
   &::after {
     content: '';
-    display: block;
-    height: 5px; /* adjust as needed */
-    background-color: #8c6c5b;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 10px;
+    z-index: 2000;
+    background-color: black;
   }
 `;
 
