@@ -41,7 +41,7 @@ const MenuWrapper = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-color: ${({ theme }) => theme.colors.main};
+  /* background-color: ${({ theme }) => theme.colors.main}; */
   padding: 2rem 0;
 
   &::after {

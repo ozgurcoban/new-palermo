@@ -53,7 +53,7 @@ const FullWidthBackground = styled(BaseFullWidthBackground)`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-color: ${({ theme }) => theme.colors.main};
+  /* background-color: ${({ theme }) => theme.colors.main}; */
 
   &::after {
     content: '';

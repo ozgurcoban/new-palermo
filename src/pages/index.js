@@ -4,6 +4,8 @@ import Layout from '../components/Layout';
 import MenuSection from '../components/MenuSection';
 import AboutUsSection from '../components/AboutUsSection';
 import ContactUsSection from '../components/ContactUsSection';
+import NewsletterSection from '../components/NewsletterSection';
+import Footer from '../components/Footer';
 
 export default function Home() {
   return (
@@ -12,6 +14,7 @@ export default function Home() {
       <MenuSection defaultCategory='pizza' />
       <AboutUsSection />
       <ContactUsSection />
+      <Footer />
     </Layout>
   );
 }

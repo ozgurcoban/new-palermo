@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import {
   GoogleMap as GoogleMaps,
@@ -26,25 +27,33 @@ const GoogleMap = () => {
     window.open(url, '_blank');
   };
   return (
-    <LoadScript googleMapsApiKey={apiKey}>
-      <GoogleMaps
-        mapContainerStyle={containerStyle}
-        center={center}
-        zoom={17}
-        options={{ draggable: false, mapId: '330578b92517eac7' }}
-      >
-        <Marker
-          position={center}
-          icon={{
-            url: '/logo.png',
-            scaledSize: { width: 50, height: 50 },
-          }}
-          onClick={handleMarkerClick}
-          style={{ cursor: 'pointer' }}
-        />
-      </GoogleMaps>
-    </LoadScript>
+    <RoundedDiv>
+      <LoadScript googleMapsApiKey={apiKey}>
+        <GoogleMaps
+          mapContainerStyle={containerStyle}
+          center={center}
+          zoom={17}
+          options={{ draggable: false, mapId: '330578b92517eac7' }}
+        >
+          <Marker
+            position={center}
+            icon={{
+              url: '/logo.png',
+              scaledSize: { width: 50, height: 50 },
+            }}
+            onClick={handleMarkerClick}
+            style={{ cursor: 'pointer' }}
+          />
+        </GoogleMaps>
+      </LoadScript>
+    </RoundedDiv>
   );
 };
+
+const RoundedDiv = styled.div`
+  clip-path: inset(0 round 8px);
+  overflow: hidden;
+  height: 50vh;
+`;
 
 export default React.memo(GoogleMap);

@@ -12,7 +12,7 @@ const Hero = () => {
         layout='fullWidth'
         placeholder='blurred'
         style={{
-          height: '100vh',
+          height: '100%',
           width: '100%',
           objectFit: 'cover',
           objectPosition: 'center',
@@ -36,11 +36,10 @@ const Hero = () => {
             </div>
           </div>
         </Subtitle>
-
         <DownArrow
           strokeColor='#E4CBAF'
-          animationDuration='3.5s'
-          animationDelay='2.5s'
+          animationDuration='2.5s'
+          animationDelay='1.5s'
         />
       </Overlay>
     </Background>
