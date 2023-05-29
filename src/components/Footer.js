@@ -7,6 +7,7 @@ import { TbBrandFacebook } from 'react-icons/tb';
 export const Footer = () => {
   return (
     <FooterContainerStyled>
+      <TopLine />
       <FooterWrapperStyled>
         <FooterContactWrapperStyled>
           <FooterContactItemsStyled>
@@ -80,8 +81,18 @@ export const Footer = () => {
   );
 };
 
+const TopLine = styled.div`
+  position: absolute;
+  top: -3px; // Adjust this value if you want the line to overlap more or less
+  left: 0;
+  height: 10px; // Adjust the height as needed
+  width: 100%;
+  background-color: ${({ theme }) => theme.colors.main};
+`;
+
 const FooterContainerStyled = styled.footer`
   background-color: ${({ theme }) => theme.colors.main};
+  position: relative;
 `;
 
 const FooterWrapperStyled = styled.div`

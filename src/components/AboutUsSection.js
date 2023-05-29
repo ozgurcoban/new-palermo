@@ -55,7 +55,7 @@ const FullWidthBackground = styled(BaseFullWidthBackground)`
   background-position: center;
   /* background-color: ${({ theme }) => theme.colors.main}; */
 
-  &::after {
+  /* &::after {
     content: '';
     position: absolute;
     left: 0;
@@ -64,7 +64,7 @@ const FullWidthBackground = styled(BaseFullWidthBackground)`
     height: 10px;
     z-index: 2000;
     background-color: black;
-  }
+  } */
 `;
 
 const ContentContainer = styled(BaseContentContainer)`
