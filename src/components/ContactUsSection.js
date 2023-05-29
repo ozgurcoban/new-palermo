@@ -15,6 +15,7 @@ import OpeningHoursSection from './OpeningHours';
 const ContactUsSection = () => {
   return (
     <FullWidthBackground>
+      <TopLine />
       <ContentContainer>
         <h2>Vi ser fram emot att höra från dig</h2>
         <GoogleMap />
@@ -66,6 +67,15 @@ const ContactUsSection = () => {
   );
 };
 
+const TopLine = styled.div`
+  position: absolute;
+  top: 0; // Adjust this value if you want the line to overlap more or less
+  left: 0;
+  height: 2px; // Adjust the height as needed
+  width: 100%;
+  background-color: ${({ theme }) => theme.colors.main};
+`;
+
 const FullWidthBackground = styled(BaseFullWidthBackground)`
   background-image: url('/contact-wave.svg');
   border: none;
@@ -73,6 +83,7 @@ const FullWidthBackground = styled(BaseFullWidthBackground)`
   background-size: cover;
   background-position: bottom;
   padding-bottom: 6rem;
+  position: relative;
 `;
 
 const ContentContainer = styled(BaseContentContainer)`
