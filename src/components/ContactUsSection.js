@@ -166,9 +166,12 @@ const StyledContactCard = styled(ContactCard)`
 const ImageContainer = styled.div`
   position: relative;
   width: 100%;
+  max-height: 500px;
 
   .front-image {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     z-index: 1;
   }
 `;
