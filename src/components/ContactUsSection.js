@@ -69,11 +69,11 @@ const ContactUsSection = () => {
 
 const TopLine = styled.div`
   position: absolute;
-  top: 0; // Adjust this value if you want the line to overlap more or less
+  top: -4px; // Adjust this value if you want the line to overlap more or less
   left: 0;
-  height: 2px; // Adjust the height as needed
+  height: 5px; // Adjust the height as needed
   width: 100%;
-  background-color: ${({ theme }) => theme.colors.main};
+  background-color: ${({ theme }) => theme.colors.secondaryAccent};
 `;
 
 const FullWidthBackground = styled(BaseFullWidthBackground)`
