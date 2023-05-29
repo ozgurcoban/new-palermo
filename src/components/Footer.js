@@ -19,14 +19,14 @@ export const Footer = () => {
                     target='_blank'
                     aria-label='Facebook'
                   >
-                    <TbBrandFacebook />
+                    <TbBrandFacebook className='icon' />
                   </a>
                   <a
                     href='https://www.instagram.com/palermo_uppsala'
                     target='_blank'
                     aria-label='Instagram'
                   >
-                    <BsInstagram />
+                    <BsInstagram className='icon' />
                   </a>
                 </SocialIconsStyled>
               </SocialMediaWrapStyled>
@@ -154,6 +154,10 @@ const SocialIconsStyled = styled.div`
   width: 100%;
   gap: 1rem;
 
+  .icon {
+    font-size: 1.2rem;
+  }
+
   @media screen and (min-width: 584px) {
     flex-direction: column;
     align-items: flex-start;
@@ -162,9 +166,7 @@ const SocialIconsStyled = styled.div`
 `;
 
 const SocialIconLinkStyled = styled.a`
-  /* &:last-child {
-    margin-left: 1.5rem;
-  } */
+  font-size: 1.2rem;
 `;
 
 const WebsiteRightsWrapperStyled = styled.div`
