@@ -72,6 +72,7 @@ const FullWidthBackground = styled(BaseFullWidthBackground)`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
+  padding-bottom: 6rem;
 `;
 
 const ContentContainer = styled(BaseContentContainer)`
