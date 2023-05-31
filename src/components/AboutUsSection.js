@@ -10,6 +10,7 @@ import {
 const AboutUsSection = () => {
   return (
     <FullWidthBackground>
+      <TopLine />
       <ContentContainer>
         <Headline>Om oss</Headline>
         <Subtitle>
@@ -53,18 +54,16 @@ const FullWidthBackground = styled(BaseFullWidthBackground)`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  /* background-color: ${({ theme }) => theme.colors.main}; */
+  position: relative;
+`;
 
-  /* &::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 100%;
-    height: 10px;
-    z-index: 2000;
-    background-color: black;
-  } */
+const TopLine = styled.div`
+  position: absolute;
+  top: -4px; // Adjust this value if you want the line to overlap more or less
+  left: 0;
+  height: 5px; // Adjust the height as needed
+  width: 100%;
+  background-color: ${({ theme }) => theme.colors.primary};
 `;
 
 const ContentContainer = styled(BaseContentContainer)`

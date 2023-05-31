@@ -19,6 +19,7 @@ const MenuSection = () => {
 
   return (
     <MenuWrapper>
+      <TopLine />
       <h2>Meny</h2>
       <Categories
         style={{ paddingTop: '1rem' }}
@@ -39,21 +40,10 @@ const MenuWrapper = styled.div`
   /* overflow: auto; // new line */
   background-image: url('/top-wave.svg');
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  /* background-color: ${({ theme }) => theme.colors.main}; */
+  background-size: 100% auto;
+  background-position: top center;
+  background-color: ${({ theme }) => theme.colors.primary};
   padding: 2rem 0;
-
-  &::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 100%;
-    height: 20px;
-    background-color: #607d8b;
-    z-index: 2000;
-  }
 
   h2 {
     text-align: center;
@@ -61,6 +51,19 @@ const MenuWrapper = styled.div`
     font-weight: 400;
     color: ${({ theme }) => theme.colors.primaryWhite};
   }
+
+  @media (min-width: 1501px) {
+    background-size: 100% auto; // you can adjust this to make the SVG look better on larger screens
+  }
+`;
+
+const TopLine = styled.div`
+  position: absolute;
+  top: -3px;
+  left: 0;
+  height: 10px;
+  width: 100%;
+  background-color: black;
 `;
 
 const ScrollableContent = styled.div`

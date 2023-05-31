@@ -83,7 +83,7 @@ export const Footer = () => {
 
 const TopLine = styled.div`
   position: absolute;
-  top: -3px; // Adjust this value if you want the line to overlap more or less
+  top: -8px; // Adjust this value if you want the line to overlap more or less
   left: 0;
   height: 10px; // Adjust the height as needed
   width: 100%;
@@ -96,7 +96,7 @@ const FooterContainerStyled = styled.footer`
 `;
 
 const FooterWrapperStyled = styled.div`
-  padding: 2rem;
+  padding: 0 2rem 2rem 2rem;
   max-width: 1120px;
   margin: 0 auto;
 `;
@@ -130,8 +130,9 @@ const FooterContactWrapperStyled = styled.div`
 
 const FooterContactItemsStyled = styled.div`
   display: grid;
-  align-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(232px, 1fr));
+  /* align-items: center;
+  justify-items: center; */
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   grid-gap: 1rem;
   @media (min-width: 992px) {
     justify-items: center;
@@ -182,7 +183,7 @@ const SocialIconLinkStyled = styled.a`
 
 const WebsiteRightsWrapperStyled = styled.div`
   display: flex;
-  padding-bottom: 1rem;
+  padding-bottom: 3rem;
 `;
 
 const WebsiteRightsStyled = styled.small`

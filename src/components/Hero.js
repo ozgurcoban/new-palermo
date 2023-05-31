@@ -51,6 +51,10 @@ const Background = styled.section`
   width: 100%;
   color: white;
   position: relative;
+
+  @media screen and (orientation: portrait) {
+    height: calc(100vh - 56px);
+  }
 `;
 
 const Overlay = styled.div`

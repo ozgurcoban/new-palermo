@@ -106,7 +106,7 @@ const OpeningHoursContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-column-gap: 6rem;
-  grid-row-gap: 2rem;
+  /* grid-row-gap: 2rem; */
   align-items: center;
   background: ${({ theme }) => theme.colors.primaryWhite};
   border-radius: ${({ theme }) => theme.borderRadius};
@@ -123,7 +123,7 @@ const OpeningHoursContainer = styled.div`
   }
 
   .clock-wrapper {
-    padding: 8rem;
+    padding: 4rem;
 
     .clock {
       /* margin: 2rem; */
